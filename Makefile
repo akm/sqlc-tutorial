@@ -5,3 +5,11 @@ $(SQLC_CLI):
 .PHONY: generate
 generate: $(SQLC_CLI)
 	$(SQLC_CLI) generate
+
+.PHONY: db-up
+db-up:
+	docker-compose up -d
+
+.PHONY: db-down
+db-down:
+	docker-compose down
