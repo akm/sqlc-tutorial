@@ -14,7 +14,7 @@ import (
 func run() error {
 	ctx := context.Background()
 
-	db, err := sql.Open("mysql", "user:password@/dbname?parseTime=true")
+	db, err := sql.Open("mysql", "root@/sqlc-tutorial1?charset=utf8mb4&parseTime=true&loc=Asia%2FTokyo")
 	if err != nil {
 		return err
 	}
