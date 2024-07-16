@@ -1,0 +1,16 @@
+name: "sqlc-tutorial"
+services:
+  mysql:
+    image: mysql:8.0.38
+    hostname: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: sqlc-tutorial1
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_ROOT_HOST: "%"
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql/conf.d:/etc/mysql/conf.d
+      - ./data/mysql/log/:/var/log/mysql
+      - ./data/mysql/data:/var/lib/mysql
